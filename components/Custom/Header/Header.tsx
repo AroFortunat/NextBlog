@@ -1,4 +1,5 @@
-import { PageContainer } from "./PageContainer"
+import { PageContainer } from "../PageContainer"
+import { HeaderNavigation } from "./Header-navigation"
 
 export const Header = () => {
   return (
@@ -11,6 +12,7 @@ export const Header = () => {
         >NextBLog</h1>
         </div>
         {/* Navigation */}
+        <HeaderNavigation/>
         {/* Button */}
       </PageContainer>
     </header>
