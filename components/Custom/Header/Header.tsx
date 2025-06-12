@@ -1,8 +1,8 @@
 import { PageContainer } from "../PageContainer"
-import { HeaderNavigation } from "./Header-navigation"
-import { HeaderProfileButton } from "./Header-profile-button"
-import { HeaderResponsiveMenu } from "./Header-responsive-menu"
-import { HeaderToggleTheme } from "./Header-toggle-theme"
+import { HeaderNavigation } from "./_components/Header-navigation"
+import { HeaderProfileButton } from "./_components/Header-profile-button"
+import { HeaderResponsiveMenu } from "./_components/Header-responsive-menu"
+import { HeaderToggleTheme } from "./_components/Header-toggle-theme"
 
 export const Header = () => {
   return (

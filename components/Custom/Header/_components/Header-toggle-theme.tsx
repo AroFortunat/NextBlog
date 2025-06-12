@@ -1,7 +1,7 @@
 "use client"
 import { Button } from "@/components/ui/button"
 import { Moon, Sun } from "lucide-react"
-import { useToggleTheme } from "./hook/useToggleTheme"
+import { useToggleTheme } from "../hook/useToggleTheme"
 
 export const HeaderToggleTheme = () => {
     const toggleTheme = useToggleTheme()
