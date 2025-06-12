@@ -1,14 +1,16 @@
 import { PageContainer } from "../PageContainer"
 import { HeaderNavigation } from "./Header-navigation"
 import { HeaderProfileButton } from "./Header-profile-button"
+import { HeaderResponsiveMenu } from "./Header-responsive-menu"
+import { HeaderToggleTheme } from "./Header-toggle-theme"
 
 export const Header = () => {
   return (
     <header className="p-4 border-b">
       <PageContainer>
         <div className="flex justify-between">
-          <div>
-
+          <div className="flex items-center gap-2">
+            <HeaderResponsiveMenu />
             <h1
               className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-red-400 to to-blue-600"
             >NextBLog</h1>
@@ -16,9 +18,10 @@ export const Header = () => {
           {/* Navigation */}
           <HeaderNavigation />
           {/* Button */}
-          <div className="flex items-center">
+          <div className="flex items-center gap-2">
             {/* Toggle */}
             {/* Profile  button */}
+            <HeaderToggleTheme/>
             <HeaderProfileButton />
           </div>
         </div>
