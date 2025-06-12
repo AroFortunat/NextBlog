@@ -20,7 +20,7 @@ export default function Home() {
               <Input
                 type="email"
                 placeholder="Email"
-                className="dark:bg-white mt-4"
+                className="dark:bg-white"
               />
               <Button
                 size={'lg'}
@@ -31,6 +31,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+        
       </div>
     </PageContainer>
   );
