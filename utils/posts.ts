@@ -5,7 +5,7 @@ export const POSTS: Post[] = [
     id: 1,
     category: "React",
     title: "React State Management: Choosing the Right Solution",
-    image: "/react-state-management.jpg",
+    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee",
     caption:
       "Explore different state management solutions in React and choose the one that fits your needs.",
     date: "2023-01-15",
@@ -19,7 +19,7 @@ export const POSTS: Post[] = [
     id: 2,
     category: "Next.js",
     title: "Server-Side Rendering with Next.js: A Practical Guide",
-    image: "/nextjs-ssr.jpg",
+    image: "https://images.unsplash.com/photo-1687603921109-46401b201195",
     caption:
       "Learn how to implement server-side rendering in Next.js for improved performance and SEO.",
     date: "2023-02-02",
@@ -33,7 +33,7 @@ export const POSTS: Post[] = [
     id: 3,
     category: "React Native",
     title: "Building Cross-Platform Mobile Apps with React Native",
-    image: "/react-native-cross-platform.jpg",
+    image: "https://images.unsplash.com/photo-1653387300291-bfa1eeb90e16",
     caption:
       "Step-by-step guide to building cross-platform mobile applications using React Native.",
     date: "2023-02-18",
@@ -47,7 +47,7 @@ export const POSTS: Post[] = [
     id: 4,
     category: "CSS",
     title: "Advanced CSS Techniques for Modern Web Design",
-    image: "/advanced-css-techniques.jpg",
+    image: "https://images.unsplash.com/photo-1581276879432-15e50529f34b",
     caption:
       "Explore advanced CSS techniques to enhance the visual appeal and interactivity of your web designs.",
     date: "2023-03-05",
@@ -61,7 +61,7 @@ export const POSTS: Post[] = [
     id: 5,
     category: "JavaScript",
     title: "Mastering JavaScript Promises and Asynchronous Programming",
-    image: "/javascript-promises-async.jpg",
+    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee",
     caption:
       "In-depth tutorial on mastering JavaScript promises and asynchronous programming concepts.",
     date: "2023-03-20",
@@ -75,7 +75,7 @@ export const POSTS: Post[] = [
     id: 6,
     category: "React",
     title: "Building Reusable React Components: Best Practices",
-    image: "/reusable-react-components.jpg",
+    image: "https://images.unsplash.com/photo-1687603921109-46401b201195",
     caption:
       "Best practices and tips for building reusable and maintainable React components in your projects.",
     date: "2023-04-10",
@@ -89,7 +89,7 @@ export const POSTS: Post[] = [
     id: 7,
     category: "Next.js",
     title: "Dynamic Routes in Next.js: A Comprehensive Guide",
-    image: "/nextjs-dynamic-routes.jpg",
+    image: "https://images.unsplash.com/photo-1653387300291-bfa1eeb90e16",
     caption:
       "Comprehensive guide on implementing dynamic routes in Next.js for flexible page rendering.",
     date: "2023-04-25",
@@ -103,7 +103,7 @@ export const POSTS: Post[] = [
     id: 8,
     category: "React Native",
     title: "State Management in React Native Apps: Redux vs. Context API",
-    image: "/react-native-state-management.jpg",
+    image: "https://images.unsplash.com/photo-1581276879432-15e50529f34b",
     caption:
       "Comparison of state management solutions, Redux and Context API, in React Native applications.",
     date: "2023-05-12",
@@ -117,7 +117,7 @@ export const POSTS: Post[] = [
     id: 9,
     category: "CSS",
     title: "Responsive Design Patterns with CSS Grid and Flexbox",
-    image: "/responsive-design-css.jpg",
+    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee",
     caption:
       "Explore responsive design patterns using CSS Grid and Flexbox for modern web layouts.",
     date: "2023-06-01",
@@ -131,7 +131,7 @@ export const POSTS: Post[] = [
     id: 10,
     category: "JavaScript",
     title: "ES6+ Features Every JavaScript Developer Should Know",
-    image: "/es6-javascript.jpg",
+    image: "https://images.unsplash.com/photo-1687603921109-46401b201195",
     caption:
       "Overview of essential ES6+ features and how they can improve your JavaScript development.",
     date: "2023-06-18",
@@ -145,7 +145,7 @@ export const POSTS: Post[] = [
     id: 11,
     category: "React",
     title: "React Hooks: A Deep Dive into Modern React State Management",
-    image: "/react-hooks-deep-dive.jpg",
+    image: "https://images.unsplash.com/photo-1653387300291-bfa1eeb90e16",
     caption:
       "In-depth exploration of React Hooks and their role in modern React state management.",
     date: "2023-07-05",
@@ -159,7 +159,7 @@ export const POSTS: Post[] = [
     id: 12,
     category: "Next.js",
     title: "SEO Optimization in Next.js: Best Practices for Higher Rankings",
-    image: "/nextjs-seo-optimization.jpg",
+    image: "https://images.unsplash.com/photo-1581276879432-15e50529f34b",
     caption:
       "Best practices for optimizing your Next.js applications for search engines and higher rankings.",
     date: "2023-07-20",
@@ -173,7 +173,7 @@ export const POSTS: Post[] = [
     id: 13,
     category: "React Native",
     title: "Navigation in React Native: Choosing the Right Navigation Library",
-    image: "/react-native-navigation.jpg",
+    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee",
     caption:
       "Guide to choosing the right navigation library for seamless navigation in React Native apps.",
     date: "2023-08-08",
@@ -187,7 +187,7 @@ export const POSTS: Post[] = [
     id: 14,
     category: "CSS",
     title: "SASS and SCSS: Enhancing CSS with Preprocessors",
-    image: "/sass-scss-css.jpg",
+    image: "https://images.unsplash.com/photo-1687603921109-46401b201195",
     caption:
       "Introduction to SASS and SCSS and how they enhance CSS with variables, mixins, and more.",
     date: "2023-08-25",
@@ -201,7 +201,7 @@ export const POSTS: Post[] = [
     id: 15,
     category: "JavaScript",
     title: "Modern JavaScript Tooling: Babel, Webpack, and Beyond",
-    image: "/modern-javascript-tooling.jpg",
+    image: "https://images.unsplash.com/photo-1653387300291-bfa1eeb90e16",
     caption:
       "Exploring modern JavaScript tooling with Babel, Webpack, and other essential tools.",
     date: "2023-09-12",
@@ -215,7 +215,7 @@ export const POSTS: Post[] = [
     id: 16,
     category: "React",
     title: "Testing React Components: A Comprehensive Guide",
-    image: "/testing-react-components.jpg",
+    image: "https://images.unsplash.com/photo-1581276879432-15e50529f34b",
     caption:
       "Comprehensive guide to testing React components effectively for robust and reliable code.",
     date: "2023-09-28",
@@ -229,7 +229,7 @@ export const POSTS: Post[] = [
     id: 17,
     category: "Next.js",
     title: "Authentication in Next.js: Implementing Secure User Authentication",
-    image: "/nextjs-authentication.jpg",
+    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee",
     caption:
       "Implementing secure user authentication in Next.js applications for enhanced security.",
     date: "2023-10-15",
@@ -243,7 +243,7 @@ export const POSTS: Post[] = [
     id: 18,
     category: "React Native",
     title: "Optimizing React Native Apps for Performance: Best Practices",
-    image: "/react-native-performance.jpg",
+    image: "https://images.unsplash.com/photo-1687603921109-46401b201195",
     caption:
       "Best practices for optimizing React Native apps to deliver a high-performance user experience.",
     date: "2023-10-30",
@@ -257,7 +257,7 @@ export const POSTS: Post[] = [
     id: 19,
     category: "CSS",
     title: "CSS-in-JS: Styling React Applications with Styled Components",
-    image: "/css-in-js-styled-components.jpg",
+    image: "https://images.unsplash.com/photo-1653387300291-bfa1eeb90e16",
     caption:
       "Introduction to CSS-in-JS and styling React applications with Styled Components for modular styling.",
     date: "2023-11-15",
@@ -271,7 +271,7 @@ export const POSTS: Post[] = [
     id: 20,
     category: "JavaScript",
     title: "Functional Programming in JavaScript: Principles and Practices",
-    image: "/functional-programming-javascript.jpg",
+    image: "https://images.unsplash.com/photo-1581276879432-15e50529f34b",
     caption:
       "Understanding the principles and practices of functional programming in JavaScript.",
     date: "2023-11-30",

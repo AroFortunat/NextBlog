@@ -2,7 +2,7 @@
  const SinglePost = () => {
   return (
     <div>
-      
+      {}
     </div>
   )
 }
