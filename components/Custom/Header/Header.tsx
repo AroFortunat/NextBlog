@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { PageContainer } from "../PageContainer"
 import { HeaderNavigation } from "./_components/Header-navigation"
 import { HeaderProfileButton } from "./_components/Header-profile-button"
@@ -13,14 +14,16 @@ export const Header = () => {
             <HeaderResponsiveMenu />
             <h1
               className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-red-400 to to-blue-600"
-            >NextBLog</h1>
+            >
+              <Link href={'/'}> NextBLog </Link>
+            </h1>
           </div>
           {/* Navigation */}
           <HeaderNavigation />
           {/* Button */}
           <div className="flex items-center gap-2">
             {/* Toggle */}
-            <HeaderToggleTheme/>
+            <HeaderToggleTheme />
             {/* Profile  button */}
             <HeaderProfileButton />
           </div>
