@@ -1,5 +1,5 @@
 import { Post } from "@/types"
-import { PostCard } from "./PostCard"
+import { PostCard } from "./_components/PostCard"
 
 export const Postlist = (
     {posts}:{posts:Post[]}

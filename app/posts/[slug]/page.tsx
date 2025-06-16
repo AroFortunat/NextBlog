@@ -1,5 +1,7 @@
 import { PageContainer } from "@/components/Custom/PageContainer"
+import { ViewAndComments } from "@/components/Custom/ViewAndComments"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Separator } from "@/components/ui/separator"
 import { Post } from "@/types"
 
 const SinglePostPage = ({ params }: { params: { slug: string } }) => {
@@ -16,6 +18,7 @@ const SinglePostPage = ({ params }: { params: { slug: string } }) => {
     nbViews: 25,
     nbComments: 8,
     slug: "react-state-management-choosing-right-solution",
+    content:'Hello'
   }
   return (
     <PageContainer>
@@ -45,7 +48,17 @@ const SinglePostPage = ({ params }: { params: { slug: string } }) => {
               </p>
             </div>
           </div>
+           <ViewAndComments data={POST} iconCommentSize={24} iconViewSize={24}/>
         </div>
+        <Separator />
+         <div
+         className="mt-6"
+         dangerouslySetInnerHTML={{
+          __html:POST.content as string
+         }}
+         >
+
+         </div>
       </div>
     </PageContainer>
   )

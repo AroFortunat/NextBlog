@@ -1,9 +1,9 @@
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Post } from "@/types"
-import { Eye, MessageCircle } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { ViewAndComments } from "../../ViewAndComments"
 
 export const PostCard = (
     { data }: { data: Post }
@@ -31,30 +31,7 @@ export const PostCard = (
                         </Badge>
                     </CardContent>
                     <CardFooter>
-                        <div className="flex gap-2">
-                            <div className="flex items-center gap-1">
-                                <MessageCircle
-                                    size={20}
-                                    className="text-slate-500"
-                                />
-                                <p
-                                    className="text-slate-500"
-                                >
-                                    {data.nbComments}
-                                </p>
-                            </div>
-                            <div className="flex items-center gap-1">
-                                <Eye
-                                    size={20}
-                                    className="text-slate-500"
-                                />
-                                <p
-                                    className="text-slate-500"
-                                >
-                                    {data.nbViews}
-                                </p>
-                            </div>
-                        </div>
+                        <ViewAndComments data={data} iconCommentSize={20} iconViewSize={20} />
                     </CardFooter>
                 </Card>
             </Link>
