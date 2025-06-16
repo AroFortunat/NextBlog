@@ -1,4 +1,5 @@
 import { PageContainer } from "@/components/Custom/PageContainer"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Post } from "@/types"
 
 const SinglePostPage = ({ params }: { params: { slug: string } }) => {
@@ -28,6 +29,20 @@ const SinglePostPage = ({ params }: { params: { slug: string } }) => {
               <h1 className="font-bold text-3xl sm:text-5xl text-black dark:text-white text-center">
                 {POST.title}
               </h1>
+            </div>
+          </div>
+        </div>
+        <div className="flex justify-between items-center p-4 mb-3">
+          <div className="flex justify-center items-center gap-3">
+            <Avatar>
+              <AvatarImage src={'/defaultProfile.jpg'} />
+              <AvatarFallback>{POST.author}</AvatarFallback>
+            </Avatar>
+            <div>
+              <p> {POST.author}</p>
+              <p className="text-slate-500">
+                Posted on {new Date(POST.date).toLocaleDateString()}
+              </p>
             </div>
           </div>
         </div>
