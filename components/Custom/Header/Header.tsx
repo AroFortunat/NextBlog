@@ -20,8 +20,8 @@ export const Header = () => {
           {/* Button */}
           <div className="flex items-center gap-2">
             {/* Toggle */}
-            {/* Profile  button */}
             <HeaderToggleTheme/>
+            {/* Profile  button */}
             <HeaderProfileButton />
           </div>
         </div>
