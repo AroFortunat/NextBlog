@@ -18,7 +18,7 @@ export const GET = async (
 
     return NextResponse.json(
       { error: "Error something wrong" },
-      { status: 200 }
+      { status: 500 }
     );
   }
 };

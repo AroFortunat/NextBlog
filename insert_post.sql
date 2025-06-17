@@ -1,0 +1,31 @@
+INSERT INTO posts (
+  id,
+  category,
+  title,
+  image,
+  caption,
+  date,
+  minutesToRead,
+  author,
+  nbViews,
+  nbComments,
+  slug,
+  content,
+  createdAt,
+  updatedAt
+) VALUES (
+  'clq1234567890',
+  'Next.js',
+  'Comment construire une API REST avec Next.js',
+  'https://images.unsplash.com/photo-1633356122544-f134324a6cee',
+  'Un guide complet pour construire une API REST performante avec Next.js et TypeScript',
+  '2025-06-17 10:00:00',
+  12,
+  'John Doe',
+  0,
+  0,
+  'comment-construire-api-rest-nextjs',
+  'Contenu détaillé de l''article sur la construction d''une API REST...',
+  NOW(),
+  NOW()
+);
