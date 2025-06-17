@@ -13,3 +13,24 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
+model Post {
+  id            String      @id @default(cuid())
+  category      String
+  title         String
+  image         String
+  caption       String   @db.Text
+  date          DateTime
+  minutesToRead Int
+  author        String
+  nbViews       Int      @default(0)
+  nbComments    Int      @default(0)
+  slug          String   @unique
+  content       String?  @db.Text
+
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@map("posts")
+}
+
