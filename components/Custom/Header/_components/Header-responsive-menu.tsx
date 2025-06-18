@@ -1,10 +1,19 @@
+"use client"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { CATEGORIES } from "@/utils/categories"
+import { useAllCategories } from "@/hooks/useAllCategories"
 import { Menu } from "lucide-react"
 import Link from "next/link"
 
 export const HeaderResponsiveMenu = () => {
+
+  const { data: CATEGORIES, isFetching, error } = useAllCategories()
+
+  if (error) {
+    return <p>error</p>
+  }
+
+
   return (
     <Sheet>
       <SheetTrigger>
@@ -18,13 +27,13 @@ export const HeaderResponsiveMenu = () => {
             <Button variant="ghost">Write a Post </Button>
           </Link>
           <p>Categories</p>
-          {CATEGORIES.map((c)=>(
+          {CATEGORIES?.map((c) => (
             <Link
-            key={c.id}
-            href={`/categories/${c.slug}`}
-            className="block px-2 py-1 text-lg"
+              key={c.id}
+              href={`/categories/${c.slug}`}
+              className="block px-2 py-1 text-lg"
             >
-              {c.name }
+              {c.title}
             </Link>
           ))}
         </div>

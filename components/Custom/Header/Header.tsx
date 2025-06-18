@@ -18,13 +18,9 @@ export const Header = () => {
               <Link href={'/'}> NextBLog </Link>
             </h1>
           </div>
-          {/* Navigation */}
           <HeaderNavigation />
-          {/* Button */}
           <div className="flex items-center gap-2">
-            {/* Toggle */}
             <HeaderToggleTheme />
-            {/* Profile  button */}
             <HeaderProfileButton />
           </div>
         </div>

@@ -40,4 +40,6 @@ model Category {
   title String
   image String?
   posts Post[]
+
+  @@map("categories")
 }

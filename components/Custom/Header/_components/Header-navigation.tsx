@@ -1,7 +1,5 @@
 "use client"
-
 import Link from "next/link"
-
 import {
     NavigationMenu,
     NavigationMenuContent,
@@ -11,24 +9,51 @@ import {
     NavigationMenuTrigger,
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
-import { CATEGORIES } from "@/utils/categories"
+import { useAllCategories } from "@/hooks/useAllCategories"
+import { Skeleton } from "@/components/ui/skeleton"
 
 export function HeaderNavigation() {
+
+    const { data: CATEGORIES, isFetching, error } = useAllCategories()
+
+    if (error) {
+        return <p>error</p>
+    }
+
     return (
-        <NavigationMenu viewport={false}>
+        <NavigationMenu viewport={true}>
             <NavigationMenuList>
                 <NavigationMenuItem>
                     <NavigationMenuTrigger>Categories</NavigationMenuTrigger>
                     <NavigationMenuContent>
-                        <ul className="grid w-[400px] gap-2 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                            {CATEGORIES.map((categori)=>(
-                                <ListItem
-                                 key={categori.id}
-                                 href={`/categories/${categori.slug}`}
-                                >
-                                    {categori.name}
-                                </ListItem>
-                            ))}
+                        <ul className="grid w-[200px] gap-2 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                            {isFetching ?
+                                (
+                                    <div className="flex flex-col md:flex-row gap-8">
+                                        <div className="space-y-2">
+                                            <Skeleton className="h-4 w-[200px]" />
+                                            <Skeleton className="h-4 w-[200px]" />
+                                            <Skeleton className="h-4 w-[200px]" />
+                                        </div>
+                                        <div className="space-y-2">
+                                            <Skeleton className="h-4 w-[200px]" />
+                                            <Skeleton className="h-4 w-[200px]" />
+                                        </div>
+                                    </div>
+                                ) : (
+                                    <>
+                                        {CATEGORIES?.map((categori) => (
+                                            <ListItem
+                                                key={categori.id}
+                                                href={`/categories/${categori.slug}`}
+                                            >
+                                                {categori.title}
+                                            </ListItem>
+                                        ))}
+                                    </>
+                                )
+                            }
+
                         </ul>
                     </NavigationMenuContent>
                 </NavigationMenuItem>

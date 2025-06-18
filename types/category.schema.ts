@@ -1,10 +1,10 @@
 import { z } from "zod/v4";
 
-export const categorySchema = z.object({
+export const AllCategorySchema = z.object({
   id: z.string(),
   slug: z.string(),
   title: z.string(),
-  image: z.string().optional(),
-});
+  image: z.string().optional().nullable(),
+}).array();
 
-export type category = z.infer<typeof categorySchema>;
+export type AllCategory = z.infer<typeof AllCategorySchema>;
