@@ -7,7 +7,7 @@ export type category = {
 }
 
 export const PostSchema = z.object({
-  id: z.number(),
+  id: z.string(),
   category: z.string(),
   title: z.string(),
   image: z.string(),
@@ -15,10 +15,12 @@ export const PostSchema = z.object({
   date: z.date(),
   minutesToRead: z.number(),
   author: z.string(),
-  nbViews: z.number(),
-  nbComments: z.number(),
+  nbViews: z.number().default(0),
+  nbComments: z.number().default(0),
   slug: z.string(),
-  content: z.string().optional(),
+  content: z.string().nullable(),
+  createdAt: z.date().default(() => new Date()),
+  updatedAt: z.date()
 });
 
 export type Post = z.infer<typeof PostSchema>;

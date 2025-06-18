@@ -1,25 +1,22 @@
+"use client"
 import { PageContainer } from "@/components/Custom/PageContainer"
 import { ViewAndComments } from "@/components/Custom/ViewAndComments"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Separator } from "@/components/ui/separator"
+import { usePost } from "@/hooks/usePost"
 import { Post } from "@/types"
 
-const SinglePostPage = ({ params }: { params: { slug: string } }) => {
-  const POST: Post = {
-    id: 1,
-    category: "React",
-    title: "React State Management: Choosing the Right Solution",
-    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee",
-    caption:
-      "Explore different state management solutions in React and choose the one that fits your needs.",
-    date: "2023-01-15",
-    minutesToRead: 10,
-    author: "John ReactDev",
-    nbViews: 25,
-    nbComments: 8,
-    slug: "react-state-management-choosing-right-solution",
-    content:'Hello'
+const SinglePostPage = async ({ params }: { params: { slug: string } }) => {
+  const { slug } = await params
+  const { data: post, isFetching, error } = usePost(slug)
+
+  if (isFetching) {
+    return <p>Loading</p>
   }
+  if (error) {
+    return <p>error</p>
+  }
+
   return (
     <PageContainer>
       <div className="p-8">
@@ -30,7 +27,7 @@ const SinglePostPage = ({ params }: { params: { slug: string } }) => {
           <div className="h-full w-full flex flex-col justify-center items-center">
             <div className="sm:max-w-xl max-w-xs bg-secondary/80 p-4 rounded-lg">
               <h1 className="font-bold text-3xl sm:text-5xl text-black dark:text-white text-center">
-                {POST.title}
+                {post?.title}
               </h1>
             </div>
           </div>
@@ -39,26 +36,28 @@ const SinglePostPage = ({ params }: { params: { slug: string } }) => {
           <div className="flex justify-center items-center gap-3">
             <Avatar>
               <AvatarImage src={'/defaultProfile.jpg'} />
-              <AvatarFallback>{POST.author}</AvatarFallback>
+              <AvatarFallback>{post?.author}</AvatarFallback>
             </Avatar>
-            <div>
-              <p> {POST.author}</p>
-              <p className="text-slate-500">
-                Posted on {new Date(POST.date).toLocaleDateString()}
-              </p>
-            </div>
+            {post?.createdAt && (
+              <div>
+                <p> {post?.author}</p>
+                <p className="text-slate-500">
+                  Posted on {post?.date.toLocaleDateString()}
+                </p>
+              </div>
+            )}
           </div>
-           <ViewAndComments data={POST} iconCommentSize={24} iconViewSize={24}/>
+          <ViewAndComments data={post as Post} iconCommentSize={24} iconViewSize={24} />
         </div>
         <Separator />
-         <div
-         className="mt-6"
-         dangerouslySetInnerHTML={{
-          __html:POST.content as string
-         }}
-         >
+        <div
+          className="mt-6"
+          dangerouslySetInnerHTML={{
+            __html: post?.content as string
+          }}
+        >
 
-         </div>
+        </div>
       </div>
     </PageContainer>
   )
