@@ -1,8 +1,8 @@
 import { Post } from "@/types";
-import { v4 as uuidv4 } from 'uuid';
+
 export const POSTS: Post[] = [
   {
-    id: 1,
+    id: "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
     category: "React",
     title: "React State Management: Choosing the Right Solution",
     image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee",
@@ -14,9 +14,12 @@ export const POSTS: Post[] = [
     nbViews: 25,
     nbComments: 8,
     slug: "react-state-management-choosing-right-solution",
+    content: "React state management is a crucial aspect of building scalable applications. Let's explore different solutions:\n\n1. useState Hook\n- Perfect for local component state\n- Simple and straightforward\n- Built into React\n\n2. Context API\n- Great for avoiding prop drilling\n- Suitable for global state that changes infrequently\n- Built into React\n\n3. Redux\n- Powerful for complex state logic\n- Great developer tools\n- Large ecosystem\n\n4. Zustand\n- Simple yet powerful\n- Minimal boilerplate\n- Great TypeScript support",
+    createdAt: new Date("2023-01-10T08:30:00Z"),
+    updatedAt: new Date("2023-01-15T15:45:00Z")
   },
   {
-    id: 2,
+    id: "1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed",
     category: "Next.js",
     title: "Server-Side Rendering with Next.js: A Practical Guide",
     image: "https://images.unsplash.com/photo-1687603921109-46401b201195",
@@ -28,9 +31,12 @@ export const POSTS: Post[] = [
     nbViews: 18,
     nbComments: 5,
     slug: "server-side-rendering-nextjs-practical-guide",
+    content: null,
+    createdAt: new Date("2023-02-01T10:15:00Z"),
+    updatedAt: new Date("2023-02-02T16:20:00Z")
   },
   {
-    id: 3,
+    id: "6ec0bd7f-11c0-43da-975e-2a8ad9ebae0b",
     category: "React Native",
     title: "Building Cross-Platform Mobile Apps with React Native",
     image: "https://images.unsplash.com/photo-1653387300291-bfa1eeb90e16",
@@ -42,9 +48,12 @@ export const POSTS: Post[] = [
     nbViews: 32,
     nbComments: 10,
     slug: "building-cross-platform-mobile-apps-react-native",
+    content: "Building cross-platform mobile applications with React Native involves understanding several key concepts:\n\n1. Component Structure\n2. Navigation Patterns\n3. Platform-Specific Code\n4. Performance Optimization\n\nLet's explore each of these aspects in detail...",
+    createdAt: new Date("2023-02-15T09:00:00Z"),
+    updatedAt: new Date("2023-02-18T14:30:00Z")
   },
   {
-    id: 4,
+    id: "4f6b9df5-7c77-4925-a629-13e8c7a450d9",
     category: "CSS",
     title: "Advanced CSS Techniques for Modern Web Design",
     image: "https://images.unsplash.com/photo-1581276879432-15e50529f34b",
@@ -56,9 +65,12 @@ export const POSTS: Post[] = [
     nbViews: 22,
     nbComments: 7,
     slug: "advanced-css-techniques-modern-web-design",
+    content: null,
+    createdAt: new Date("2023-03-01T10:00:00Z"),
+    updatedAt: new Date("2023-03-05T15:30:00Z")
   },
   {
-    id: 5,
+    id: "d9428888-122b-11e1-b85c-61cd3cbb3210",
     category: "JavaScript",
     title: "Mastering JavaScript Promises and Asynchronous Programming",
     image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee",
@@ -70,9 +82,12 @@ export const POSTS: Post[] = [
     nbViews: 28,
     nbComments: 6,
     slug: "mastering-javascript-promises-asynchronous-programming",
+    content: null,
+    createdAt: new Date("2023-03-15T10:15:00Z"),
+    updatedAt: new Date("2023-03-20T16:20:00Z")
   },
   {
-    id: 6,
+    id: "f47ac10b-58cc-4372-a567-0e02b2c3d479",
     category: "React",
     title: "Building Reusable React Components: Best Practices",
     image: "https://images.unsplash.com/photo-1687603921109-46401b201195",
@@ -84,9 +99,12 @@ export const POSTS: Post[] = [
     nbViews: 35,
     nbComments: 9,
     slug: "building-reusable-react-components-best-practices",
+    content: null,
+    createdAt: new Date("2023-04-05T10:00:00Z"),
+    updatedAt: new Date("2023-04-10T15:30:00Z")
   },
   {
-    id: 7,
+    id: "550e8400-e29b-41d4-a716-446655440000",
     category: "Next.js",
     title: "Dynamic Routes in Next.js: A Comprehensive Guide",
     image: "https://images.unsplash.com/photo-1653387300291-bfa1eeb90e16",
@@ -98,9 +116,12 @@ export const POSTS: Post[] = [
     nbViews: 19,
     nbComments: 4,
     slug: "dynamic-routes-nextjs-comprehensive-guide",
+    content: null,
+    createdAt: new Date("2023-04-20T10:15:00Z"),
+    updatedAt: new Date("2023-04-25T16:20:00Z")
   },
   {
-    id: 8,
+    id: "67e55044-10b1-426f-9247-bb680e5fe0c8",
     category: "React Native",
     title: "State Management in React Native Apps: Redux vs. Context API",
     image: "https://images.unsplash.com/photo-1581276879432-15e50529f34b",
@@ -112,9 +133,12 @@ export const POSTS: Post[] = [
     nbViews: 40,
     nbComments: 11,
     slug: "state-management-react-native-redux-context-api",
+    content: null,
+    createdAt: new Date("2023-05-07T10:00:00Z"),
+    updatedAt: new Date("2023-05-12T15:30:00Z")
   },
   {
-    id: 9,
+    id: "8a9d6a3c-6b8f-40c9-9d2e-13bdf7bdc7e9",
     category: "CSS",
     title: "Responsive Design Patterns with CSS Grid and Flexbox",
     image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee",
@@ -126,9 +150,12 @@ export const POSTS: Post[] = [
     nbViews: 27,
     nbComments: 8,
     slug: "responsive-design-patterns-css-grid-flexbox",
+    content: null,
+    createdAt: new Date("2023-05-27T10:00:00Z"),
+    updatedAt: new Date("2023-06-01T15:30:00Z")
   },
   {
-    id: 10,
+    id: "71f0c4d5-9587-43d2-8654-46d6c2b9f12d",
     category: "JavaScript",
     title: "ES6+ Features Every JavaScript Developer Should Know",
     image: "https://images.unsplash.com/photo-1687603921109-46401b201195",
@@ -140,9 +167,12 @@ export const POSTS: Post[] = [
     nbViews: 33,
     nbComments: 10,
     slug: "es6-features-javascript-developers-should-know",
+    content: null,
+    createdAt: new Date("2023-06-15T10:00:00Z"),
+    updatedAt: new Date("2023-06-18T15:30:00Z")
   },
   {
-    id: 11,
+    id: "c2e1d8d4-b23c-4c8c-9fb5-a4fb9c8e3c0a",
     category: "React",
     title: "React Hooks: A Deep Dive into Modern React State Management",
     image: "https://images.unsplash.com/photo-1653387300291-bfa1eeb90e16",
@@ -154,9 +184,12 @@ export const POSTS: Post[] = [
     nbViews: 24,
     nbComments: 6,
     slug: "react-hooks-deep-dive-modern-react-state-management",
+    content: null,
+    createdAt: new Date("2023-07-01T10:00:00Z"),
+    updatedAt: new Date("2023-07-05T15:30:00Z")
   },
   {
-    id: 12,
+    id: "e5b6c7d8-9a1b-2c3d-4e5f-6g7h8i9j0k1l",
     category: "Next.js",
     title: "SEO Optimization in Next.js: Best Practices for Higher Rankings",
     image: "https://images.unsplash.com/photo-1581276879432-15e50529f34b",
@@ -168,9 +201,12 @@ export const POSTS: Post[] = [
     nbViews: 31,
     nbComments: 9,
     slug: "seo-optimization-nextjs-best-practices-higher-rankings",
+    content: null,
+    createdAt: new Date("2023-07-15T10:00:00Z"),
+    updatedAt: new Date("2023-07-20T15:30:00Z")
   },
   {
-    id: 13,
+    id: "f1e2d3c4-b5a6-7890-cdef-ghij12345678",
     category: "React Native",
     title: "Navigation in React Native: Choosing the Right Navigation Library",
     image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee",
@@ -182,9 +218,12 @@ export const POSTS: Post[] = [
     nbViews: 23,
     nbComments: 7,
     slug: "navigation-react-native-choosing-right-library",
+    content: null,
+    createdAt: new Date("2023-08-03T10:00:00Z"),
+    updatedAt: new Date("2023-08-08T15:30:00Z")
   },
   {
-    id: 14,
+    id: "a9b8c7d6-e5f4-3210-9876-fedcba098765",
     category: "CSS",
     title: "SASS and SCSS: Enhancing CSS with Preprocessors",
     image: "https://images.unsplash.com/photo-1687603921109-46401b201195",
@@ -196,9 +235,12 @@ export const POSTS: Post[] = [
     nbViews: 29,
     nbComments: 8,
     slug: "sass-scss-enhancing-css-preprocessors",
+    content: null,
+    createdAt: new Date("2023-08-20T10:00:00Z"),
+    updatedAt: new Date("2023-08-25T15:30:00Z")
   },
   {
-    id: 15,
+    id: "b1c2d3e4-f5g6-h7i8-j9k0-l1m2n3o4p5q6",
     category: "JavaScript",
     title: "Modern JavaScript Tooling: Babel, Webpack, and Beyond",
     image: "https://images.unsplash.com/photo-1653387300291-bfa1eeb90e16",
@@ -210,9 +252,12 @@ export const POSTS: Post[] = [
     nbViews: 36,
     nbComments: 11,
     slug: "modern-javascript-tooling-babel-webpack-beyond",
+    content: null,
+    createdAt: new Date("2023-09-07T10:00:00Z"),
+    updatedAt: new Date("2023-09-12T15:30:00Z")
   },
   {
-    id: 16,
+    id: "r7s8t9u0-v1w2-x3y4-z5a6-b7c8d9e0f1g2",
     category: "React",
     title: "Testing React Components: A Comprehensive Guide",
     image: "https://images.unsplash.com/photo-1581276879432-15e50529f34b",
@@ -224,9 +269,12 @@ export const POSTS: Post[] = [
     nbViews: 38,
     nbComments: 12,
     slug: "testing-react-components-comprehensive-guide",
+    content: null,
+    createdAt: new Date("2023-09-25T10:00:00Z"),
+    updatedAt: new Date("2023-09-28T15:30:00Z")
   },
   {
-    id: 17,
+    id: "h3i4j5k6-l7m8-n9o0-p1q2-r3s4t5u6v7w8",
     category: "Next.js",
     title: "Authentication in Next.js: Implementing Secure User Authentication",
     image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee",
@@ -238,9 +286,12 @@ export const POSTS: Post[] = [
     nbViews: 34,
     nbComments: 10,
     slug: "authentication-nextjs-implementing-secure-user-authentication",
+    content: null,
+    createdAt: new Date("2023-10-10T10:00:00Z"),
+    updatedAt: new Date("2023-10-15T15:30:00Z")
   },
   {
-    id: 18,
+    id: "x9y0z1a2-b3c4-d5e6-f7g8-h9i0j1k2l3m4",
     category: "React Native",
     title: "Optimizing React Native Apps for Performance: Best Practices",
     image: "https://images.unsplash.com/photo-1687603921109-46401b201195",
@@ -252,9 +303,12 @@ export const POSTS: Post[] = [
     nbViews: 26,
     nbComments: 7,
     slug: "optimizing-react-native-apps-performance-best-practices",
+    content: null,
+    createdAt: new Date("2023-10-25T10:00:00Z"),
+    updatedAt: new Date("2023-10-30T15:30:00Z")
   },
   {
-    id: 19,
+    id: "n5o6p7q8-r9s0-t1u2-v3w4-x5y6z7a8b9c0",
     category: "CSS",
     title: "CSS-in-JS: Styling React Applications with Styled Components",
     image: "https://images.unsplash.com/photo-1653387300291-bfa1eeb90e16",
@@ -266,9 +320,12 @@ export const POSTS: Post[] = [
     nbViews: 30,
     nbComments: 9,
     slug: "css-in-js-styling-react-applications-styled-components",
+    content: null,
+    createdAt: new Date("2023-11-10T10:00:00Z"),
+    updatedAt: new Date("2023-11-15T15:30:00Z")
   },
   {
-    id: 20,
+    id: "d1e2f3g4-h5i6-j7k8-l9m0-n1o2p3q4r5s6",
     category: "JavaScript",
     title: "Functional Programming in JavaScript: Principles and Practices",
     image: "https://images.unsplash.com/photo-1581276879432-15e50529f34b",
@@ -280,5 +337,8 @@ export const POSTS: Post[] = [
     nbViews: 37,
     nbComments: 11,
     slug: "functional-programming-javascript-principles-practices",
-  },
+    content: "Functional programming in JavaScript is becoming increasingly popular. Key concepts include:\n\n1. Pure Functions\n2. Immutability\n3. Higher-Order Functions\n4. Function Composition\n\nThese principles help create more predictable and maintainable code...",
+    createdAt: new Date("2023-11-25T11:20:00Z"),
+    updatedAt: new Date("2023-11-30T17:45:00Z")
+  }
 ];
