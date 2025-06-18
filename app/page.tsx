@@ -10,7 +10,7 @@ export default function Home() {
       <div className="py-10 px-4">
         <Hero />
         <Categories />
-        <Postlist posts={POSTS} />
+        <Postlist />
       </div>
     </PageContainer>
   );

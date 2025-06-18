@@ -1,1 +1,2 @@
-export * from '@/types/types'
+export * from '@/types/singlePost.schema'
+export * from '@/types/allPost.schema'

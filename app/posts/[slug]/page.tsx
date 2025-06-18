@@ -2,7 +2,7 @@ import { PostComponent } from "./component/Post"
 
 const SinglePostPage = async  ({ params }: { params: { slug: string } }) => {
 
-  const {slug} = params
+  const {slug} = await params
 
   return (
     <PostComponent slug={slug}/>

@@ -1,24 +1,18 @@
 "use client"
+import { Loader } from "@/components/Custom/Loader"
 import { PageContainer } from "@/components/Custom/PageContainer"
 import { ViewAndComments } from "@/components/Custom/ViewAndComments"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Separator } from "@/components/ui/separator"
-import { Spinner } from "@/components/ui/spinner"
-import { usePost } from "@/hooks/usePost"
+import { usePostBySlug } from "@/hooks/usePostBySlug"
 import { Post } from "@/types"
 
 export const PostComponent = ({ slug }: { slug: string }) => {
 
-  const { data: post, isFetching, error } = usePost(slug)
+  const { data: post, isFetching, error } = usePostBySlug(slug)
 
   if (isFetching) {
-    return (
-      <PageContainer>
-        <div className="flex justify-center h-full my-80">
-          <Spinner size={'large'}>Loading...</Spinner>
-        </div>
-      </PageContainer>
-    )
+    return <Loader/>
   }
   if (error) {
     return <p>error</p>

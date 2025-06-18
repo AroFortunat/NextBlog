@@ -1,21 +1,16 @@
 import { prisma } from "@/lib/connect";
-import { SinglePostSchema } from "@/types";
-import { NextRequest, NextResponse } from "next/server";
+import { allPostSchema } from "@/types";
+import { NextResponse } from "next/server";
 
-export const GET = async (
-  req: NextRequest,
-  { params }: { params: { slug: string } }
-) => {
+export const GET = async () => {
   try {
-    const { slug } = await params;
-
-    const postBySlug = await prisma.post.findUnique({ where: { slug } });
+    const postBySlug = await prisma.post.findMany();
 
     if (postBySlug === null) {
       return NextResponse.json({ error: "Post not found" }, { status: 404 });
     }
 
-    const validationResult = SinglePostSchema.safeParse(postBySlug);
+    const validationResult = allPostSchema.safeParse(postBySlug);
 
     if (!validationResult.success) {
       console.error("Validation error:", validationResult.error);

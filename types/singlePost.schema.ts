@@ -6,7 +6,7 @@ export type category = {
     slug:string;
 }
 
-export const PostSchema = z.object({
+export const SinglePostSchema = z.object({
   id: z.string(),
   category: z.string(),
   title: z.string(),
@@ -23,5 +23,5 @@ export const PostSchema = z.object({
   updatedAt: z.date()
 });
 
-export type Post = z.infer<typeof PostSchema>;
+export type Post = z.infer<typeof SinglePostSchema>;
 
