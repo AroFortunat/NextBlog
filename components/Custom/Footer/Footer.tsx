@@ -3,6 +3,7 @@ import { PageContainer } from "../PageContainer"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { useAllCategories } from "@/hooks/useAllCategories"
+import { Skeleton } from "@/components/ui/skeleton"
 
 export const Footer = () => {
 
@@ -11,7 +12,6 @@ export const Footer = () => {
   if (error) {
     return <p>error</p>
   }
-
 
   return (
     <footer className="p-4 border-t">
@@ -22,15 +22,27 @@ export const Footer = () => {
           >NextBLog
           </h1>
           <div className="flex flex-col md:flex-row gap-2 ">
-            {CATEGORIES?.map((c) => (
-              <div key={c.id}>
-                <Link href={`/categories/${c.slug}`}>
-                  <Button variant={'ghost'}>
-                    {c.title}
-                  </Button>
-                </Link>
-              </div>
-            ))}
+            {isFetching ? (
+              <>
+                {CATEGORIES?.map(() => (
+                  <div className="flex items-center gap-4">
+                    <Skeleton className="h-4 w-[80px]" />
+                  </div>
+                ))}
+              </>
+            ) : (
+              <>
+                {CATEGORIES?.map((c) => (
+                  <div key={c.id}>
+                    <Link href={`/categories/${c.slug}`}>
+                      <Button variant={'ghost'}>
+                        {c.title}
+                      </Button>
+                    </Link>
+                  </div>
+                ))}
+              </>
+            )}
             <Button variant={'ghost'}>
               <Link href={'/write'}>
                 Write
