@@ -1,5 +1,5 @@
 import { Post } from "@/types";
-
+import { v4 as uuidv4 } from 'uuid';
 export const POSTS: Post[] = [
   {
     id: 1,
@@ -8,7 +8,7 @@ export const POSTS: Post[] = [
     image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee",
     caption:
       "Explore different state management solutions in React and choose the one that fits your needs.",
-    date: "2023-01-15",
+    date: new Date("2023-01-15"),
     minutesToRead: 10,
     author: "John ReactDev",
     nbViews: 25,
@@ -22,7 +22,7 @@ export const POSTS: Post[] = [
     image: "https://images.unsplash.com/photo-1687603921109-46401b201195",
     caption:
       "Learn how to implement server-side rendering in Next.js for improved performance and SEO.",
-    date: "2023-02-02",
+    date: new Date("2023-02-02"),
     minutesToRead: 12,
     author: "Alice NextJSDev",
     nbViews: 18,
@@ -36,7 +36,7 @@ export const POSTS: Post[] = [
     image: "https://images.unsplash.com/photo-1653387300291-bfa1eeb90e16",
     caption:
       "Step-by-step guide to building cross-platform mobile applications using React Native.",
-    date: "2023-02-18",
+    date: new Date("2023-02-18"),
     minutesToRead: 15,
     author: "Bob MobileDev",
     nbViews: 32,
@@ -50,7 +50,7 @@ export const POSTS: Post[] = [
     image: "https://images.unsplash.com/photo-1581276879432-15e50529f34b",
     caption:
       "Explore advanced CSS techniques to enhance the visual appeal and interactivity of your web designs.",
-    date: "2023-03-05",
+    date: new Date("2023-03-05"),
     minutesToRead: 8,
     author: "Eva CSSDesigner",
     nbViews: 22,
@@ -64,7 +64,7 @@ export const POSTS: Post[] = [
     image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee",
     caption:
       "In-depth tutorial on mastering JavaScript promises and asynchronous programming concepts.",
-    date: "2023-03-20",
+    date: new Date("2023-03-20"),
     minutesToRead: 14,
     author: "Peter JSNinja",
     nbViews: 28,
@@ -78,7 +78,7 @@ export const POSTS: Post[] = [
     image: "https://images.unsplash.com/photo-1687603921109-46401b201195",
     caption:
       "Best practices and tips for building reusable and maintainable React components in your projects.",
-    date: "2023-04-10",
+    date: new Date("2023-04-10"),
     minutesToRead: 11,
     author: "Grace Reacter",
     nbViews: 35,
@@ -92,7 +92,7 @@ export const POSTS: Post[] = [
     image: "https://images.unsplash.com/photo-1653387300291-bfa1eeb90e16",
     caption:
       "Comprehensive guide on implementing dynamic routes in Next.js for flexible page rendering.",
-    date: "2023-04-25",
+    date: new Date("2023-04-25"),
     minutesToRead: 13,
     author: "David NextJSPro",
     nbViews: 19,
@@ -106,7 +106,7 @@ export const POSTS: Post[] = [
     image: "https://images.unsplash.com/photo-1581276879432-15e50529f34b",
     caption:
       "Comparison of state management solutions, Redux and Context API, in React Native applications.",
-    date: "2023-05-12",
+    date: new Date("2023-05-12"),
     minutesToRead: 18,
     author: "Mia RNDeveloper",
     nbViews: 40,
@@ -120,7 +120,7 @@ export const POSTS: Post[] = [
     image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee",
     caption:
       "Explore responsive design patterns using CSS Grid and Flexbox for modern web layouts.",
-    date: "2023-06-01",
+    date: new Date("2023-06-01"),
     minutesToRead: 9,
     author: "Ryan CSSMaster",
     nbViews: 27,
@@ -134,7 +134,7 @@ export const POSTS: Post[] = [
     image: "https://images.unsplash.com/photo-1687603921109-46401b201195",
     caption:
       "Overview of essential ES6+ features and how they can improve your JavaScript development.",
-    date: "2023-06-18",
+    date: new Date("2023-06-18"),
     minutesToRead: 16,
     author: "Sara JSExplorer",
     nbViews: 33,
@@ -148,7 +148,7 @@ export const POSTS: Post[] = [
     image: "https://images.unsplash.com/photo-1653387300291-bfa1eeb90e16",
     caption:
       "In-depth exploration of React Hooks and their role in modern React state management.",
-    date: "2023-07-05",
+    date: new Date("2023-07-05"),
     minutesToRead: 12,
     author: "Tom ReactHooksFan",
     nbViews: 24,
@@ -162,7 +162,7 @@ export const POSTS: Post[] = [
     image: "https://images.unsplash.com/photo-1581276879432-15e50529f34b",
     caption:
       "Best practices for optimizing your Next.js applications for search engines and higher rankings.",
-    date: "2023-07-20",
+    date: new Date("2023-07-20"),
     minutesToRead: 14,
     author: "Lily NextJSSEO",
     nbViews: 31,
@@ -176,7 +176,7 @@ export const POSTS: Post[] = [
     image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee",
     caption:
       "Guide to choosing the right navigation library for seamless navigation in React Native apps.",
-    date: "2023-08-08",
+    date: new Date("2023-08-08"),
     minutesToRead: 10,
     author: "Mike RNNavigator",
     nbViews: 23,
@@ -190,7 +190,7 @@ export const POSTS: Post[] = [
     image: "https://images.unsplash.com/photo-1687603921109-46401b201195",
     caption:
       "Introduction to SASS and SCSS and how they enhance CSS with variables, mixins, and more.",
-    date: "2023-08-25",
+    date: new Date("2023-08-25"),
     minutesToRead: 15,
     author: "Diana CSSPreprocessor",
     nbViews: 29,
@@ -204,7 +204,7 @@ export const POSTS: Post[] = [
     image: "https://images.unsplash.com/photo-1653387300291-bfa1eeb90e16",
     caption:
       "Exploring modern JavaScript tooling with Babel, Webpack, and other essential tools.",
-    date: "2023-09-12",
+    date: new Date("2023-09-12"),
     minutesToRead: 13,
     author: "Chris JSToolingExpert",
     nbViews: 36,
@@ -218,7 +218,7 @@ export const POSTS: Post[] = [
     image: "https://images.unsplash.com/photo-1581276879432-15e50529f34b",
     caption:
       "Comprehensive guide to testing React components effectively for robust and reliable code.",
-    date: "2023-09-28",
+    date: new Date("2023-09-28"),
     minutesToRead: 17,
     author: "Mark ReactTestingPro",
     nbViews: 38,
@@ -232,7 +232,7 @@ export const POSTS: Post[] = [
     image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee",
     caption:
       "Implementing secure user authentication in Next.js applications for enhanced security.",
-    date: "2023-10-15",
+    date: new Date("2023-10-15"),
     minutesToRead: 14,
     author: "Olivia NextAuth",
     nbViews: 34,
@@ -246,7 +246,7 @@ export const POSTS: Post[] = [
     image: "https://images.unsplash.com/photo-1687603921109-46401b201195",
     caption:
       "Best practices for optimizing React Native apps to deliver a high-performance user experience.",
-    date: "2023-10-30",
+    date: new Date("2023-10-30"),
     minutesToRead: 11,
     author: "Tim RNPerformance",
     nbViews: 26,
@@ -260,7 +260,7 @@ export const POSTS: Post[] = [
     image: "https://images.unsplash.com/photo-1653387300291-bfa1eeb90e16",
     caption:
       "Introduction to CSS-in-JS and styling React applications with Styled Components for modular styling.",
-    date: "2023-11-15",
+    date: new Date("2023-11-15"),
     minutesToRead: 12,
     author: "Victoria CSSInJS",
     nbViews: 30,
@@ -274,7 +274,7 @@ export const POSTS: Post[] = [
     image: "https://images.unsplash.com/photo-1581276879432-15e50529f34b",
     caption:
       "Understanding the principles and practices of functional programming in JavaScript.",
-    date: "2023-11-30",
+    date: new Date("2023-11-30"),
     minutesToRead: 16,
     author: "Alex FunctionalJS",
     nbViews: 37,

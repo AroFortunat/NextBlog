@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { CustomThemeProvider } from "@/providers/theme-providers";
 import { Header } from "@/components/Custom/Header";
 import { Footer } from "@/components/Custom/Footer";
+import { CustomThemeProvider, QueryProviders } from "@/providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,19 +30,21 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
-        <CustomThemeProvider
-          attribute={'class'}
-          defaultTheme='system'
-          enableSystem
-        >
-          <div className="flex flex-col justify-between min-h-screen">
-            <Header />
-            <div className="flex-grow">
-              {children}
+        <QueryProviders>
+          <CustomThemeProvider
+            attribute={'class'}
+            defaultTheme='system'
+            enableSystem
+          >
+            <div className="flex flex-col justify-between min-h-screen">
+              <Header />
+              <div className="flex-grow">
+                {children}
+              </div>
+              <Footer />
             </div>
-            <Footer />
-          </div>
-        </CustomThemeProvider>
+          </CustomThemeProvider>
+        </QueryProviders>
       </body>
     </html>
   );
