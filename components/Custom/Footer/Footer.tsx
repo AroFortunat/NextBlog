@@ -24,8 +24,8 @@ export const Footer = () => {
           <div className="flex flex-col md:flex-row gap-2 ">
             {isFetching ? (
               <>
-                {CATEGORIES?.map(() => (
-                  <div className="flex items-center gap-4">
+                {CATEGORIES?.map((_,key) => (
+                  <div key={key} className="flex items-center gap-4">
                     <Skeleton className="h-4 w-[80px]" />
                   </div>
                 ))}

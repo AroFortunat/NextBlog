@@ -1,18 +1,22 @@
 "use client"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Skeleton } from "@/components/ui/skeleton"
 import { useAllCategories } from "@/hooks/useAllCategories"
 import { Menu } from "lucide-react"
 import Link from "next/link"
 
 export const HeaderResponsiveMenu = () => {
 
-  const { data: CATEGORIES, isFetching, error } = useAllCategories()
+  const { data: CATEGORIES, isFetching, error ,isLoading} = useAllCategories()
+
+  if (isFetching || isLoading) {
+    return <Skeleton className="h-4 w-[40px] md:hidden" />
+  }
 
   if (error) {
     return <p>error</p>
   }
-
 
   return (
     <Sheet>

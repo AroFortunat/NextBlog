@@ -5,7 +5,7 @@ import { useAllCategories } from "@/hooks/useAllCategories";
 import Link from "next/link";
 
 export function Categories() {
-    const { data: CATEGORIES, isFetching, error } = useAllCategories()
+    const { data: CATEGORIES, isFetching, error ,isLoading} = useAllCategories()
 
     if (error) {
         return <p>error</p>
@@ -13,10 +13,10 @@ export function Categories() {
 
     return (
         <div className=" mt-6 flex flex-col gap-4 md:flex-row justify-center items-center">
-            {isFetching ? (
+            {(isFetching || isLoading) ? (
                 <>
-                    {CATEGORIES?.map(() => (
-                        <div className="flex items-center gap-4">
+                    {CATEGORIES?.map((_,key) => (
+                        <div key={key} className="flex items-center gap-4">
                             <Skeleton className="h-4 w-[80px]" />
                         </div>
                     ))}

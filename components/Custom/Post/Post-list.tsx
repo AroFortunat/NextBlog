@@ -2,18 +2,23 @@
 import { useAllPost } from "@/hooks/useAllPost"
 import { PostCard } from "./_components/PostCard"
 import { PostCardSkeleton } from "./_components/PostCardSkeleton"
+import { Loader } from "../Loader"
 
 export const Postlist = () => {
 
-  const { data: posts, isFetching, error } = useAllPost()
+  const { data: posts, isFetching, error,isLoading } = useAllPost()
 
-  if (isFetching) {
+  if (isLoading) {
+    return <Loader/>
+  }
+
+  if (isFetching && !isLoading) {
     return (
       <div
         className="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
       >
-        {posts?.map(() => (
-          <PostCardSkeleton />
+        {posts?.map((_,key) => (
+          <PostCardSkeleton key={key} />
         ))}
       </div>
     )
