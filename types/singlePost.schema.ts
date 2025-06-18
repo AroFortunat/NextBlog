@@ -1,11 +1,5 @@
 import { z } from "zod/v4";
 
-export type category = {
-    id:number;
-    name:string;
-    slug:string;
-}
-
 export const SinglePostSchema = z.object({
   id: z.string(),
   category: z.string(),

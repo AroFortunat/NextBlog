@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "ui": "pnpm dlx shadcn@latest add"
+    "ui": "pnpm dlx shadcn@latest add",
+    "db:generate":"pnpm dlx prisma generate",
+    "db:push":" pnpm dlx prisma db push"
   },
   "dependencies": {
     "@prisma/client": "^6.9.0",

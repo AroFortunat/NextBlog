@@ -26,9 +26,18 @@ model Post {
   nbComments    Int      @default(0)
   slug          String   @unique
   content       String?  @db.Text
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  CatSlug       String   
+  cat           Category @relation(fields: [CatSlug], references: [slug])
 
   @@map("posts")
+}
+
+model Category {
+  id    String  @id @default(cuid())
+  slug  String  @unique
+  title String
+  image String?
+  posts Post[]
 }
