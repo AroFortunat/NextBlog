@@ -1,11 +1,19 @@
 import { prisma } from "@/lib/connect";
 import { allPostSchema } from "@/types";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export const GET = async () => {
+export const GET = async (req: NextRequest) => {
   try {
-    const postBySlug = await prisma.post.findMany();
+    const { searchParams } = new URL(req.url);
 
+    const CatSlug = searchParams.get("cat");
+
+    const postBySlug = await prisma.post.findMany({
+      where: {
+        ...(CatSlug && CatSlug !== null && CatSlug !== "" && { CatSlug }),
+      },
+    });
+    
     if (postBySlug === null) {
       return NextResponse.json({ error: "Post not found" }, { status: 404 });
     }

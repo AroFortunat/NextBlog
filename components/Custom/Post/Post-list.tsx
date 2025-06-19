@@ -4,9 +4,9 @@ import { PostCard } from "./_components/PostCard"
 import { PostCardSkeleton } from "./_components/PostCardSkeleton"
 import { Loader } from "../Loader"
 
-export const Postlist = () => {
+export const Postlist = ({categories}:{categories?:string}) => {
 
-  const { data: posts, isFetching, error,isLoading } = useGetAllPost()
+  const { data: posts, isFetching, error,isLoading } = useGetAllPost(categories ?? "")
 
   if (isLoading) {
     return <Loader/>
