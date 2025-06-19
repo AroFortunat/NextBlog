@@ -1,11 +1,11 @@
 "use client"
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
-import { useAllCategories } from "@/hooks/useAllCategories";
+import { useGetAllCategories } from "@/hooks/useGetAllCategories";
 import Link from "next/link";
 
 export function Categories() {
-    const { data: CATEGORIES, isFetching, error ,isLoading} = useAllCategories()
+    const { data: CATEGORIES, isFetching, error ,isLoading} = useGetAllCategories()
 
     if (error) {
         return <p>error</p>

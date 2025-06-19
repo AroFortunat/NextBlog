@@ -9,12 +9,12 @@ import {
     NavigationMenuTrigger,
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
-import { useAllCategories } from "@/hooks/useAllCategories"
+import { useGetAllCategories } from "@/hooks/useGetAllCategories"
 import { Skeleton } from "@/components/ui/skeleton"
 
 export function HeaderNavigation() {
 
-    const { data: CATEGORIES, isFetching, error } = useAllCategories()
+    const { data: CATEGORIES, isFetching, error } = useGetAllCategories()
 
     if (error) {
         return <p>error</p>

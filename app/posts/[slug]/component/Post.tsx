@@ -4,12 +4,12 @@ import { PageContainer } from "@/components/Custom/PageContainer"
 import { ViewAndComments } from "@/components/Custom/ViewAndComments"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Separator } from "@/components/ui/separator"
-import { usePostBySlug } from "@/hooks/usePostBySlug"
+import { useGetPostBySlug } from "@/hooks/useGetPostBySlug"
 import { Post } from "@/types"
 
 export const PostComponent = ({ slug }: { slug: string }) => {
 
-  const { data: post, isFetching, error } = usePostBySlug(slug)
+  const { data: post, isFetching, error } = useGetPostBySlug(slug)
 
   if (isFetching) {
     return <Loader/>

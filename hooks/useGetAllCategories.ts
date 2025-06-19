@@ -7,7 +7,7 @@ async function getAllCategories() {
   return data as AllCategory;
 }
 
-export const useAllCategories = () => {
+export const useGetAllCategories = () => {
   return useQuery({
     queryKey: ["AllCategories"],
     queryFn: () => getAllCategories(),

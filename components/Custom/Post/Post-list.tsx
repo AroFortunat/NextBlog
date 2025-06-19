@@ -1,12 +1,12 @@
 "use client"
-import { useAllPost } from "@/hooks/useAllPost"
+import { useGetAllPost } from "@/hooks/useGetAllPost"
 import { PostCard } from "./_components/PostCard"
 import { PostCardSkeleton } from "./_components/PostCardSkeleton"
 import { Loader } from "../Loader"
 
 export const Postlist = () => {
 
-  const { data: posts, isFetching, error,isLoading } = useAllPost()
+  const { data: posts, isFetching, error,isLoading } = useGetAllPost()
 
   if (isLoading) {
     return <Loader/>

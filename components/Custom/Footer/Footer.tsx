@@ -2,12 +2,12 @@
 import { PageContainer } from "../PageContainer"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { useAllCategories } from "@/hooks/useAllCategories"
+import { useGetAllCategories } from "@/hooks/useGetAllCategories"
 import { Skeleton } from "@/components/ui/skeleton"
 
 export const Footer = () => {
 
-  const { data: CATEGORIES, isFetching, error } = useAllCategories()
+  const { data: CATEGORIES, isFetching, error } = useGetAllCategories()
 
   if (error) {
     return <p>error</p>

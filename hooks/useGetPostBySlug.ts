@@ -7,7 +7,7 @@ async function getPostBySlug(slug: string) {
   return data as Post;
 }
 
-export const usePostBySlug = (slug: string) => {
+export const useGetPostBySlug = (slug: string) => {
   return useQuery({
     queryKey: ["post", slug],
     queryFn: () => getPostBySlug(slug),

@@ -7,7 +7,7 @@ async function getAllPost() {
   return data as allPost;
 }
 
-export const useAllPost = () => {
+export const useGetAllPost = () => {
   return useQuery({
     queryKey: ["Allpost"],
     queryFn: () => getAllPost(),
