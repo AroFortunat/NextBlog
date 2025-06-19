@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/Custom/Header";
 import { Footer } from "@/components/Custom/Footer";
 import { CustomThemeProvider, QueryProviders } from "@/providers";
+import { AuthProviders } from "@/providers/auth-providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,19 +32,21 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
         <QueryProviders>
-          <CustomThemeProvider
-            attribute={'class'}
-            defaultTheme='system'
-            enableSystem
-          >
-            <div className="flex flex-col justify-between min-h-screen">
-              <Header />
-              <div className="flex-grow">
-                {children}
+          <AuthProviders>
+            <CustomThemeProvider
+              attribute={'class'}
+              defaultTheme='system'
+              enableSystem
+            >
+              <div className="flex flex-col justify-between min-h-screen">
+                <Header />
+                <div className="flex-grow">
+                  {children}
+                </div>
+                <Footer />
               </div>
-              <Footer />
-            </div>
-          </CustomThemeProvider>
+            </CustomThemeProvider>
+          </AuthProviders>
         </QueryProviders>
       </body>
     </html>
