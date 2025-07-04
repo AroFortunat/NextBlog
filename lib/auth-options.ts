@@ -1,6 +1,10 @@
 import GitHubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
+import { PrismaAdapter } from "@auth/prisma-adapter"
+import { prisma } from "./connect";
+
 export const authOptions = {
+  adapter: PrismaAdapter(prisma),
   debug: true,
   providers: [
     GitHubProvider({
@@ -10,13 +14,6 @@ export const authOptions = {
     GoogleProvider({
       clientId: process.env.GOOGLE_ID as string,
       clientSecret: process.env.GOOGLE_SECRET as string,
-      authorization: {
-        params: {
-          prompt: "consent",
-          access_type: "offline",
-          response_type: "code"
-        }
-      }
-    })
+    }),
   ],
 };
