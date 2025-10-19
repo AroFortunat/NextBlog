@@ -4,7 +4,6 @@ import "./globals.css";
 import { Header } from "@/components/Custom/Header";
 import { Footer } from "@/components/Custom/Footer";
 import { CustomThemeProvider, QueryProviders } from "@/providers";
-import { AuthProviders } from "@/providers/auth-providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,7 +31,6 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
         <QueryProviders>
-          <AuthProviders>
             <CustomThemeProvider
               attribute={'class'}
               defaultTheme='system'
@@ -46,7 +44,6 @@ export default function RootLayout({
                 <Footer />
               </div>
             </CustomThemeProvider>
-          </AuthProviders>
         </QueryProviders>
       </body>
     </html>
