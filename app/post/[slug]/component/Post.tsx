@@ -10,7 +10,6 @@ import { Post } from "@/types"
 export const PostComponent = ({ slug }: { slug: string }) => {
 
   const { data: post, isFetching, error } = useGetPostBySlug(slug)
-  console.log(post)
   if (isFetching) {
     return <Loader/>
   }
