@@ -10,26 +10,26 @@ import {
 } from '@/components/ui/field';
 import { Input } from '@/components/ui/input';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { FormValues, FormValuesSchema } from '@/types';
+import { loginValues, loginSchemaValues } from '@/types';
 import { useMutation } from '@tanstack/react-query';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import { setCookie } from 'cookies-next';
 
 export function LoginForm({ className, ...props }: React.ComponentProps<'form'>) {
-  const { register, handleSubmit } = useForm<FormValues>();
+  const { register, handleSubmit } = useForm<loginValues>();
   const router = useRouter();
   const loginMutation = useMutation({
     mutationKey: ['login'],
-    mutationFn: async (data: FormValues) => {
+    mutationFn: async (data: loginValues) => {
       const response = await axios.post(`${process.env.NEXT_PUBLIC_BACK_END_URL}/auth/login`, data);
       return response.data;
     },
-    onSuccess: (data) => {
-      setCookie('authToken', data.access_token, {
+    onSuccess: (dataByForm) => {
+      setCookie('authToken', dataByForm.accesToken, {
         maxAge: 60 * 60 * 24, 
         path: '/',
-        // secure: process.env.NODE_ENV === 'production', // Secure en production
+        secure: process.env.NODE_ENV === 'production', // Secure en production
         sameSite: 'strict',
       });
 
@@ -40,8 +40,8 @@ export function LoginForm({ className, ...props }: React.ComponentProps<'form'>)
     },
   });
 
-  const onSubmit: SubmitHandler<FormValues> = (dataByForm) => {
-    const mutateValues = FormValuesSchema.parse(dataByForm);
+  const onSubmit: SubmitHandler<loginValues> = (dataByForm) => {
+    const mutateValues = loginSchemaValues.parse(dataByForm);
     loginMutation.mutateAsync(mutateValues);
   };
   return (

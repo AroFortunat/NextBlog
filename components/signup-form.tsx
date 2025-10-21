@@ -1,20 +1,51 @@
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
+'use client';
+import { cn } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
 import {
   Field,
   FieldDescription,
   FieldGroup,
   FieldLabel,
   FieldSeparator,
-} from "@/components/ui/field";
-import { Input } from "@/components/ui/input";
+} from '@/components/ui/field';
+import { Input } from '@/components/ui/input';
+import { useMutation } from '@tanstack/react-query';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { useRouter } from 'next/navigation';
+import axios from 'axios';
+import { signupSchemaValues, signupValues } from '@/types/signup.schema';
 
-export function SignupForm({
-  className,
-  ...props
-}: React.ComponentProps<"form">) {
+export function SignupForm({ className, ...props }: React.ComponentProps<'form'>) {
+  const { register, handleSubmit } = useForm<signupValues>();
+  const router = useRouter();
+  const loginMutation = useMutation({
+    mutationKey: ['login'],
+    mutationFn: async (data: signupValues) => {
+      const response = await axios.post(
+        `${process.env.NEXT_PUBLIC_BACK_END_URL}/auth/regiser`,
+        data
+      );
+      return response.data;
+    },
+    onSuccess: (dataByForm) => {
+      router.push('/');
+    },
+    onError: (error) => {
+      console.error('Erreur de connexion:', error);
+    },
+  });
+
+  const onSubmit: SubmitHandler<signupValues> = (dataByForm) => {
+    console.log(dataByForm);
+    // const mutateValues = signupSchemaValues.parse(dataByForm);
+    // loginMutation.mutateAsync(mutateValues);
+  };
   return (
-    <form className={cn("flex flex-col gap-6", className)} {...props}>
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className={cn('flex flex-col gap-6', className)}
+      {...props}
+    >
       <FieldGroup>
         <div className="flex flex-col items-center gap-1 text-center">
           <h1 className="text-2xl font-bold">Create your account</h1>
@@ -23,23 +54,36 @@ export function SignupForm({
           </p>
         </div>
         <Field>
-          <FieldLabel htmlFor="name">Full Name</FieldLabel>
-          <Input id="name" type="text" placeholder="John Doe" required />
+          <FieldLabel htmlFor="firstName">First Name</FieldLabel>
+          <Input
+            id="firstName"
+            type="text"
+            placeholder="John"
+            required
+            {...register('firstName')}
+          />
+        </Field>
+        <Field>
+          <FieldLabel htmlFor="lastName">Last Name</FieldLabel>
+          <Input id="lastName" type="text" placeholder="Doe" required {...register('lastName')} />
         </Field>
         <Field>
           <FieldLabel htmlFor="email">Email</FieldLabel>
-          <Input id="email" type="email" placeholder="m@example.com" required />
+          <Input
+            id="email"
+            type="email"
+            placeholder="m@example.com"
+            required
+            {...register('email')}
+          />
           <FieldDescription>
-            We&apos;ll use this to contact you. We will not share your email
-            with anyone else.
+            We&apos;ll use this to contact you. We will not share your email with anyone else.
           </FieldDescription>
         </Field>
         <Field>
           <FieldLabel htmlFor="password">Password</FieldLabel>
-          <Input id="password" type="password" required />
-          <FieldDescription>
-            Must be at least 8 characters long.
-          </FieldDescription>
+          <Input id="password" type="password" required {...register('password')} />
+          <FieldDescription>Must be at least 8 characters long.</FieldDescription>
         </Field>
         <Field>
           <FieldLabel htmlFor="confirm-password">Confirm Password</FieldLabel>
