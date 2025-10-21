@@ -10,27 +10,39 @@ import {
 } from '@/components/ui/field';
 import { Input } from '@/components/ui/input';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { FormValues } from '@/types';
+import { FormValues, FormValuesSchema } from '@/types';
 import { useMutation } from '@tanstack/react-query';
 import axios from 'axios';
+import { useRouter } from 'next/navigation';
+import { setCookie } from 'cookies-next';
 
 export function LoginForm({ className, ...props }: React.ComponentProps<'form'>) {
   const { register, handleSubmit } = useForm<FormValues>();
-   // Déplacer useMutation au niveau racine du composant
+  const router = useRouter();
   const loginMutation = useMutation({
     mutationKey: ['login'],
-    mutationFn: async (dataByForm: FormValues) => {
-      const result = await axios.post(
-        `${process.env.NEXT_PUBLIC_API_URL}/auth/login`, 
-        dataByForm
-      );
-      return result.data;
+    mutationFn: async (data: FormValues) => {
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_BACK_END_URL}/auth/login`, data);
+      return response.data;
+    },
+    onSuccess: (data) => {
+      setCookie('authToken', data.access_token, {
+        maxAge: 60 * 60 * 24, 
+        path: '/',
+        // secure: process.env.NODE_ENV === 'production', // Secure en production
+        sameSite: 'strict',
+      });
+
+      router.push('/dashboard');
+    },
+    onError: (error) => {
+      console.error('Erreur de connexion:', error);
     },
   });
 
   const onSubmit: SubmitHandler<FormValues> = (dataByForm) => {
-    const a = loginMutation.mutate(dataByForm);
-    console.log(a)
+    const mutateValues = FormValuesSchema.parse(dataByForm);
+    loginMutation.mutateAsync(mutateValues);
   };
   return (
     <form

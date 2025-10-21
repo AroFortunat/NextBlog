@@ -1,6 +1,6 @@
 import { z } from "zod/v4";
 
-const FormValuesSchema = z.object({
+export const FormValuesSchema = z.object({
     email: z.string().email(),
     password: z.string().min(8),
 })
