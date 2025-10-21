@@ -5,7 +5,7 @@ import { PostCardSkeleton } from "./_components/PostCardSkeleton"
 import { Loader } from "../Loader"
 
 export const Postlist = ({categories}:{categories?:string}) => {
-
+  console.log(process.env.BACK_END_URL)
   const { data: posts, isFetching, error,isLoading } = useGetAllPost(categories ?? "")
 
   if (isLoading) {
